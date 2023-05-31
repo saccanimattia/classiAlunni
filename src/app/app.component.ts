@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
+
+  @ViewChild('inputSaluti') valore!: ElementRef<HTMLInputElement>
+
+  colore = 'purple'
   title = 'classiAlunni';
   persone = [
     {nome:"luca", cognome:"rosi", isOnline:true, colore:'blue'},
@@ -25,10 +29,20 @@ export class AppComponent {
       {nome:"daniele", cognome:"neri", isOnline:true, colore:'blue'}
     ];
   }
+  cambiaColoreEvidenziatore(c:string){
+     this.colore = c;
+  }
   onInput(event : Event){
     this.title = (<HTMLInputElement>event.target).value;
   }
   riceviDati(value: string){
     console.log(value);
   }
+
+
+
+  ngAfterViewInit(): void{
+    console.log(this.valore.nativeElement.value)
+  }
+
 }

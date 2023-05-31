@@ -1,3 +1,8 @@
-<app-prova [data]="persone"></app-prova>
-
-<app-prova (mandaDatiEvento)="riceviDati($event)"></app-prova>
+<h2>scegli colore</h2>
+<div>
+  <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('yellow')">yellow
+  <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('blue')">blue
+  <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('green')">green
+  <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('red')">red
+</div>
+<p [appHighlight]="colore">ciao sono un paragrafo</p>
