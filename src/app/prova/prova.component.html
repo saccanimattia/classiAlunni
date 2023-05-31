@@ -1,8 +1,0 @@
-<ul>
-  <li *ngFor="let persona of data index as i, count as c">
-    <div class="cerchio"></div>
-    <p [ngStyle]="{color:persona.colore}">{{i+1}}/{{c}} - {{persona.nome}} - {{persona.cognome}}</p>
-
-  </li>
-</ul>
-<button mat-raised-button color="primary" (click)="mandaDati()">manda</button>
