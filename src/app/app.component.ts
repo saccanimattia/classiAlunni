@@ -6,20 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isVisible =true;
   title = 'classiAlunni';
   persone = [
-    {nome:"luca", cognome:"rosi", isOnline:true},
-    {nome:"marco", cognome:"verdi", isOnline:true},
-    {nome:"daniele", cognome:"neri", isOnline:false},
-    {nome:"luca", cognome:"rosi", isOnline:false},
-    {nome:"marco", cognome:"verdi", isOnline:false},
-    {nome:"daniele", cognome:"neri", isOnline:true}
+    {nome:"luca", cognome:"rosi", isOnline:true, colore:'blue'},
+    {nome:"marco", cognome:"verdi", isOnline:true, colore:'yellow'},
+    {nome:"daniele", cognome:"neri", isOnline:false, colore:'orange'},
+    {nome:"luca", cognome:"rosi", isOnline:false, colore:'blue'},
+    {nome:"marco", cognome:"verdi", isOnline:false, colore:'green'},
+    {nome:"daniele", cognome:"neri", isOnline:true, colore:'blue'}
   ];
-  onClick(event : Event){
-    this.title = "ho cliccato sul bottone";
+  onClick(){
+    this.persone = [
+      {nome:"t5rgh45", cognome:"rosi", isOnline:true, colore:'blue'},
+      {nome:"mabr346thrco", cognome:"verdi", isOnline:true, colore:'yellow'},
+      {nome:"$hgrf3", cognome:"neri", isOnline:false, colore:'blue'},
+      {nome:"4grf3", cognome:"6h4rgf", isOnline:false, colore:'blue'},
+      {nome:"marco", cognome:"ht4rge", isOnline:false, colore:'blue'},
+      {nome:"daniele", cognome:"neri", isOnline:true, colore:'blue'}
+    ];
   }
   onInput(event : Event){
     this.title = (<HTMLInputElement>event.target).value;
+  }
+  riceviDati(value: string){
+    console.log(value);
   }
 }

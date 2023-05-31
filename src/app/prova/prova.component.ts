@@ -1,28 +1,31 @@
-import { Component, OnInit, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-prova',
   templateUrl: './prova.component.html',
   styleUrls: ['./prova.component.css'],
 })
-export class ProvaComponent {
+export class ProvaComponent implements OnChanges{
 
-  immagine1 = "https://material.angular.io/assets/img/examples/shiba2.jpg";
-  immagine2 = "https://images.alphacoders.com/546/546607.jpg";
-  immagine = "";
+  @Input() data: any;
+  nome = 'LUCA'
+
+  @Output() mandaDatiEvento = new EventEmitter<string>()
 
   constructor(){
     console.log("costruttore");
   }
   ngOnInit(): void{
-    let counter = 0;
-    setInterval(()=>{
-      if(counter%2 != 0)
-        this.immagine = this.immagine2;
-      else
-        this.immagine = this.immagine1;
-      counter++;
-    }, 1000);
-  };
+    console.log(this.data);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.data);
+  }
+  mandaDati(){
+    this.mandaDatiEvento.emit(this.nome);
+  }
+
+
 }
 
