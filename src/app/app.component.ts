@@ -9,7 +9,7 @@ export class AppComponent{
 
   @ViewChild('inputSaluti') valore!: ElementRef<HTMLInputElement>
 
-  colore = 'purple'
+  colore = ''
   title = 'classiAlunni';
   persone = [
     {nome:"luca", cognome:"rosi", isOnline:true, colore:'blue'},

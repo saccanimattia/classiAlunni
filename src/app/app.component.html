@@ -5,4 +5,6 @@
   <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('green')">green
   <input type='radio' name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('red')">red
 </div>
-<p [appHighlight]="colore">ciao sono un paragrafo</p>
+<p [appHighlight]="colore" defaultColor="black">ciao sono un paragrafo</p>
+<p [appHighlight]="colore" defaultColor="green">ciao sono un paragrafo</p>
+<p [appHighlight]="colore" defaultColor="yellow">ciao sono un paragrafo</p>
