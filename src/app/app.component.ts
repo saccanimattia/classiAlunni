@@ -8,7 +8,9 @@ import { Component, ElementRef, ViewChild} from '@angular/core';
 export class AppComponent{
 
   @ViewChild('inputSaluti') valore!: ElementRef<HTMLInputElement>
-
+  stringa = 'classi e alunni'
+  numero = 12;
+  oggi = Date.now()
   colore = ''
   title = 'classiAlunni';
   persone = [
