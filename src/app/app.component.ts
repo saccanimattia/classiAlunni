@@ -41,10 +41,4 @@ export class AppComponent{
     console.log(value);
   }
 
-
-
-  ngAfterViewInit(): void{
-    console.log(this.valore.nativeElement.value)
-  }
-
 }
